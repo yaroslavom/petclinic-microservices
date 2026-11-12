@@ -92,6 +92,10 @@ resource "aws_instance" "kube-master" {
   key_name = "clarus"
   subnet_id = "subnet-0dc1fb2e1c5818470"
   availability_zone = "us-east-1a"
+  root_block_device {
+    volume_size = 16
+    volume_type = "gp3"
+  }
   tags = {
     Name = "kube-master"
     Project = "tera-kube-ans"
@@ -108,6 +112,10 @@ resource "aws_instance" "worker-1" {
   key_name = "clarus"
   subnet_id = "subnet-0dc1fb2e1c5818470"
   availability_zone = "us-east-1a"
+  root_block_device {
+    volume_size = 16
+    volume_type = "gp3"
+  }
   tags = {
     Name = "worker-1"
     Project = "tera-kube-ans"
@@ -124,6 +132,10 @@ resource "aws_instance" "worker-2" {
   key_name = "clarus"
   subnet_id = "subnet-0dc1fb2e1c5818470"
   availability_zone = "us-east-1a"
+  root_block_device {
+    volume_size = 16
+    volume_type = "gp3"
+  }
   tags = {
     Name = "worker-2"
     Project = "tera-kube-ans"
