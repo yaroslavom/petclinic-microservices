@@ -18,10 +18,10 @@ spec:
     - host: '{{ .Values.DNS_NAME }}'
       http:
         paths:
-          - backend:
+          - path: /
+            pathType: Prefix
+            backend:
               service:
                 name: api-gateway
                 port:
                   number: 8080
-            path: /
-            pathType: Prefix
